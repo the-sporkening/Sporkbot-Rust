@@ -1,0 +1,8 @@
+CREATE TABLE users (
+	id BIGINT NOT NULL,
+	guild_id BIGINT NOT NULL,
+	user_id BIGINT NOT NULL,
+	xp BIGINT NOT NULL DEFAULT 0,
+	last_message TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(),
+	PRIMARY KEY(id, guild_id)
+)

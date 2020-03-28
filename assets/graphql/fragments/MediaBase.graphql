@@ -1,0 +1,18 @@
+fragment MediaBase on Media {
+    id
+    idMal
+    type
+    siteUrl
+    averageScore
+    meanScore
+    title {
+        romaji
+        english
+        native
+        userPreferred
+    }
+    coverImage {
+        large
+        medium
+    }
+}

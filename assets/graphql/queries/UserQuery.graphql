@@ -1,0 +1,37 @@
+query($username: String) {
+  User(name: $username) {
+    id
+    name
+    siteUrl
+    avatar {
+      large
+    }
+    bannerImage
+    about(asHtml: false)
+    statistics {
+      anime {
+        ...UserStatistics
+      }
+      manga {
+        ...UserStatistics
+      }
+    }
+    favourites {
+      manga {
+        nodes {
+          ...MediaBase
+        }
+      }
+      characters {
+        nodes {
+          ...CharacterBase
+        }
+      }
+      anime {
+        nodes {
+          ...MediaBase
+        }
+      }
+    }
+  }
+}

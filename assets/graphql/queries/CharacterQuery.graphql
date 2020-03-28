@@ -1,0 +1,11 @@
+query($id: Int) {
+  Character(id: $id) {
+    ...CharacterBase
+    description(asHtml: false)
+    media(sort: SCORE_DESC) {
+      nodes {
+        ...MediaBase
+      }
+    }
+  }
+}

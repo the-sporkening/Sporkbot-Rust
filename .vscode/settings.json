@@ -1,0 +1,13 @@
+{
+	"sqltools.connections": [
+		{
+			"database": "sporkbot",
+			"dialect": "PostgreSQL",
+			"name": "pg",
+			"password": "password",
+			"port": 5469,
+			"server": "localhost",
+			"username": "postgres"
+		}
+	]
+}

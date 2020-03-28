@@ -1,0 +1,13 @@
+query($id: Int, $search: String) {
+  Page(perPage: 50) {
+    characters(id: $id, search: $search) {
+      ...CharacterBase
+      description(asHtml: false)
+      media(sort: SCORE_DESC) {
+        nodes {
+          ...MediaBase
+        }
+      }
+    }
+  }
+}

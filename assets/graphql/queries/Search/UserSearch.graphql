@@ -1,0 +1,39 @@
+query($id: Int, $search: String) {
+  Page(perPage: 50) {
+    users(id: $id, search: $search, sort: SEARCH_MATCH) {
+      id
+      name
+      siteUrl
+      avatar {
+        large
+      }
+      bannerImage
+      about(asHtml: true)
+      statistics {
+        anime {
+          ...UserStatistics
+        }
+        manga {
+          ...UserStatistics
+        }
+      }
+      favourites {
+        manga {
+          nodes {
+            ...MediaBase
+          }
+        }
+        characters {
+          nodes {
+            ...CharacterBase
+          }
+        }
+        anime {
+          nodes {
+            ...MediaBase
+          }
+        }
+      }
+    }
+  }
+}
